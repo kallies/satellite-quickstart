@@ -1,0 +1,20 @@
+---
+- name: Satellite Locations
+  hosts: apihost
+  colletions:
+    - redhat.satellite
+  vars:
+    satellite_username: user
+    satellite_password: password
+    server_url: https://satellite
+  tasks:
+    - name: 'dmz location'
+      location:
+        server_url: "{{ server_url }}"
+        username: "{{ satellite_username }}"
+        password: "{{ satellite_password }}"
+        name: dmz
+        organizations:
+          - pitc
+        state: present
+        validate_certs: false
