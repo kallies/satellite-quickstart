@@ -24,6 +24,12 @@ Satellite playbooks need to be executed on a api-host where
 [`python2-apypie`](https://yum.theforeman.org/client/2.3/el7/x86_64/python2-apypie-0.2.2-1.el7.noarch.rpm)
 is installed.
 
+The [Satellite documentation](https://access.redhat.com/documentation/en-us/red_hat_satellite/6.9/html/administering_red_hat_satellite/using-satellite-ansible-content-collections_admin) describes an alternative way to install dependencies.
+
+```
+satellite-maintain packages install ansible-collection-redhat-satellite
+```
+
 ## Collection Documentation
 
 ```
