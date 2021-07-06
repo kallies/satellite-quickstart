@@ -1,2 +1,3 @@
 [satellite]
-apihost
+localhost ansible_connection=local
+# apihost
