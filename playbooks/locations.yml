@@ -1,7 +1,7 @@
 ---
 - name: Satellite Locations
   hosts: apihost
-  colletions:
+  collections:
     - redhat.satellite
   vars:
     satellite_username: user
