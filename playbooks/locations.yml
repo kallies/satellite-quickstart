@@ -3,14 +3,15 @@
   hosts: localhost
   collections:
     - redhat.satellite
+  environment:
+    SATELLITE_USERNAME: "{{ satellite_username }}"
+    SATELLITE_PASSWORD: "{{ satellite_password }}"
+    SATELLITE_SERVER_URL: "{{ server_url }}"
+    SATELLITE_VALIDATE_CERTS: false
   tasks:
     - name: 'dmz location'
       location:
-        server_url: "{{ server_url }}"
-        username: "{{ satellite_username }}"
-        password: "{{ satellite_password }}"
         name: dmz
         organizations:
           - pitc
         state: present
-        validate_certs: false
