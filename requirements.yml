@@ -1,6 +1,4 @@
 ---
-#roles:
-#  - src: https://github.com/PATH
 collections:
   - name: redhat.satellite
     source: https://cloud.redhat.com/api/automation-hub/
