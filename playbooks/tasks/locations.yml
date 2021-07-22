@@ -1,0 +1,7 @@
+---
+- name: 'DMZ location'
+  location:
+    name: DMZ
+    organizations:
+      - Puzzle ITC
+    state: present
