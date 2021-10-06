@@ -39,5 +39,5 @@ ansible-doc redhat.satellite.content_view
 ## Playbook Example
 
 ```
-ansible-playbook --ask-vault-pass playbooks/locations.yml
+ansible-playbook --ask-vault-pass playbooks/satellite-main.yml
 ```
