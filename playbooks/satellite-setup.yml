@@ -1,0 +1,39 @@
+---
+- name: Satellite Setup
+  hosts: localhost
+  tasks:
+    - name: subscription manager
+      community.general.redhat_subscription:
+        org_id: 1234
+        # https://access.redhat.com/management/activation_keys
+        activationkey: 'rh-abc'
+        server_proxy_port: '1234'
+        server_proxy_hostname: 'proxy'
+    - name: rhsm repositories
+      community.general.rhsm_repository:
+        name:
+          - rhel-7-server-rpms
+          - rhel-7-server-satellite-6.9-rpms
+          - rhel-7-server-satellite-maintenance-6-rpms
+          - rhel-server-rhscl-7-rpms
+          - rhel-7-server-ansible-2.9-rpms
+        state: enabled
+        purge: true
+    - name: manage firewall
+      ansible.posix.firewalld:
+        service: RH-Satellite-6
+        state: enabled
+        permanent: true
+        immediate: true
+    - name: Install chrony, sos and ansible-collection-redhat-satellite
+      ansible.builtin.package:
+        name:
+          - chrony
+          - sos
+          - ansible-collection-redhat-satellite
+        state: present
+    - name: Start service chronyd, if not started
+      ansible.builtin.service:
+        name: chronyd
+        state: started
+        enabled: yes
