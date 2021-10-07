@@ -9,3 +9,4 @@ satellite_password: !vault |
       6234303331366166660a626563636436336233636132623138646537333263386435303538363033
       3832
 server_url: https://satellite
+satellite_organization: Puzzle ITC
