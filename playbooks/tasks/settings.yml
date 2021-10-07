@@ -1,14 +1,12 @@
 ---
 - name: 'Configure Satellite Settings'
-  setting:
-    name: "{{ item.name }}"
+  vars:
+    satellite_settings:
+      default_redhat_download_policy: immediate
+      default_proxy_download_policy: immediate
+      rss_enable: false
+      administrator: satellite@example.com
+  redhat.satellite.setting:
+    name: "{{ item.key }}"
     value: "{{ item.value }}"
-  loop:
-    - name: default_redhat_download_policy
-      value: immediate
-    - name: default_proxy_download_policy
-      value: immediate
-    - name: rss_enable
-      value: false
-    - name: administrator
-      value: satellite@example.com
+  loop: '{{ satellite_settings | dict2items }}'
