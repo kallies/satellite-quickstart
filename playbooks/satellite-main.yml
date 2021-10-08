@@ -13,3 +13,5 @@
       include_tasks: tasks/settings.yml
     - name: Satellite Locations
       include_tasks: tasks/locations.yml
+    - name: Content
+      include_tasks: tasks/content.yml
