@@ -1,6 +1,6 @@
 ---
 - name: Satellite Setup
-  hosts: localhost
+  hosts: satellite
   tasks:
     - name: subscription manager
       community.general.redhat_subscription:

@@ -1,6 +1,6 @@
 ---
 - name: Satellite Settings
-  hosts: localhost
+  hosts: satellite
   collections:
     - redhat.satellite
   environment:
