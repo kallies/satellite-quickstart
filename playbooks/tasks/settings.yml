@@ -1,11 +1,5 @@
 ---
 - name: 'Configure Satellite Settings'
-  vars:
-    satellite_settings:
-      default_redhat_download_policy: immediate
-      default_proxy_download_policy: immediate
-      rss_enable: false
-      administrator: satellite@example.com
   redhat.satellite.setting:
     name: "{{ item.key }}"
     value: "{{ item.value }}"

@@ -30,6 +30,8 @@ The [Satellite documentation](https://access.redhat.com/documentation/en-us/red_
 satellite-maintain packages install ansible-collection-redhat-satellite
 ```
 
+(!) The role `content_views` is only available in collection redhat.satellite >= 2.1.0
+
 ## Collection Documentation
 
 ```
