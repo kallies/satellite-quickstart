@@ -1,12 +1,12 @@
 ---
-- name: Red Hat Repositories
-  include_role:
-    name: redhat.satellite.repositories
-# vars: satellite_products
 - name: Content Credentials
   include_role:
     name: redhat.satellite.content_credentials
 # vars: satellite_content_credentials
+- name: Red Hat Repositories
+  include_role:
+    name: redhat.satellite.repositories
+# vars: satellite_products
 - name: Sync Plans
   include_role:
     name: redhat.satellite.sync_plans
