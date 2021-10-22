@@ -1,6 +1,6 @@
 ---
 - name: 'DMZ location'
-  location:
+  redhat.satellite.location:
     name: DMZ
     organizations:
       - Puzzle ITC
