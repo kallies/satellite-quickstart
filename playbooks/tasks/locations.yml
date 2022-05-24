@@ -3,5 +3,5 @@
   redhat.satellite.location:
     name: DMZ
     organizations:
-      - Puzzle ITC
+      - {{ satellite_organization }}
     state: present
