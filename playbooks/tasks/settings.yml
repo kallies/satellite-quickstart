@@ -1,6 +1,5 @@
 ---
 - name: 'Configure Satellite Settings'
-  redhat.satellite.setting:
-    name: "{{ item.key }}"
-    value: "{{ item.value }}"
-  loop: '{{ satellite_settings | dict2items }}'
+  include_role:
+    name: redhat.satellite.settings
+# vars: satellite_settings
