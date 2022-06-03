@@ -3,5 +3,5 @@
   redhat.satellite.location:
     name: DMZ
     organizations:
-      - {{ satellite_organization }}
+      - "{{ satellite_organization }}"
     state: present

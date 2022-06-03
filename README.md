@@ -31,6 +31,7 @@ satellite-maintain packages install ansible-collection-redhat-satellite
 ```
 
 (!) The role `content_views` is only available in collection redhat.satellite >= 2.1.0
+(!) The role `settings` is only available in collection redhat.satellite >= 3.1.0
 
 ## Collection Documentation
 
