@@ -2,17 +2,16 @@
 - name: Content Credentials
   include_role:
     name: redhat.satellite.content_credentials
-# vars: satellite_content_credentials
+  when: satellite_content_credentials is defined
 - name: Red Hat Repositories
   include_role:
     name: redhat.satellite.repositories
-# vars: satellite_products
+  when: satellite_products is defined
 - name: Sync Plans
   include_role:
     name: redhat.satellite.sync_plans
-# vars: satellite_sync_plans
+  when: satellite_sync_plans is defined
 - name: Content Views
   include_role:
     name: redhat.satellite.content_views
-# vars: satellite_content_views
-# content_views requires ansible collection redhat.satellite >= 2.1.0
+  when: satellite_content_views is defined
