@@ -1,5 +1,0 @@
----
-- name: 'Configure Satellite Settings'
-  include_role:
-    name: redhat.satellite.settings
-# vars: satellite_settings

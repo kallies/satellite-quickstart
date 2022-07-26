@@ -9,8 +9,10 @@
     SATELLITE_SERVER_URL: "{{ server_url }}"
     SATELLITE_VALIDATE_CERTS: false
   tasks:
-    - name: Satellite Settings
-      include_tasks: tasks/settings.yml
+    - name: Configure Satellite Settings
+      include_role:
+        name: redhat.satellite.settings
+      when: satellite_settings is defined
     - name: Satellite Locations
       include_tasks: tasks/locations.yml
     - name: Content
