@@ -1,7 +1,0 @@
----
-- name: 'DMZ location'
-  redhat.satellite.location:
-    name: DMZ
-    organizations:
-      - "{{ satellite_organization }}"
-    state: present

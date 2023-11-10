@@ -1,0 +1,38 @@
+---
+satellite_products:
+  - name: Red Hat Enterprise Linux Server
+    repository_sets:
+      - name: Red Hat Enterprise Linux 7 Server (RPMs)
+        basearch: x86_64
+        releasever: 7Server
+      - name: Red Hat Enterprise Linux 7 Server (Kickstart)
+        basearch: x86_64
+        releasever: 7.9
+      - name: Red Hat Enterprise Linux 7 Server - Optional (RPMs)
+        basearch: x86_64
+        releasever: 7Server
+      - name: Red Hat Enterprise Linux 7 Server - Extras (RPMs)
+        basearch: x86_64
+  - name: Red Hat Software Collections (for RHEL Server)
+    repository_sets:
+      - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server  # noqa: yaml[line-length]
+        basearch: x86_64
+        releasever: 7Server
+  - name: Red Hat Enterprise Linux for x86_64
+    repository_sets:
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
+        releasever: 8
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
+        releasever: 8.8
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
+        releasever: 8
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
+        releasever: 8.8
+  - name: CentOS 8 Stream
+    repositories:
+      - name: repo-centos-stream-AppStream
+        content_type: yum
+        url: http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/
+      - name: repo-centos-stream-BaseOS
+        content_type: yum
+        url: http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/

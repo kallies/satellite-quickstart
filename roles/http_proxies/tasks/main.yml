@@ -1,0 +1,15 @@
+---
+- name: Create http_proxies  # noqa: args[module]
+  redhat.satellite.http_proxy:
+    username: "{{ satellite_username | default(omit) }}"
+    password: "{{ satellite_password | default(omit) }}"
+    server_url: "{{ satellite_server_url | default(omit) }}"
+    validate_certs: "{{ satellite_validate_certs | default(omit) }}"
+    name: "{{ item.name }}"
+    url: "{{ item.url }}"
+    locations: "{{ item.locations | default(omit) }}"
+    organizations: "{{ item.organizations | default(omit) }}"
+    proxy_password: "{{ item.proxy_password | default(omit) }}"
+    proxy_username: "{{ item.proxy_username | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ satellite_http_proxies }}"

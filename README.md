@@ -18,26 +18,24 @@ can be obtained from <https://cloud.redhat.com/ansible/automation-hub/token>.
 
 Manual way: `ansible-galaxy collection install redhat.satellite.tar.gz -p ./collections`
 
-### redhat.satellite dependency
-
-Satellite playbooks need to be executed on a api-host where
-[`python2-apypie`](https://yum.theforeman.org/client/2.3/el7/x86_64/python2-apypie-0.2.2-1.el7.noarch.rpm)
-is installed.
-
-The [Satellite documentation](https://access.redhat.com/documentation/en-us/red_hat_satellite/6.10/html/administering_red_hat_satellite/using-satellite-ansible-content-collections_admin) describes an alternative way to install dependencies.
+The [Satellite documentation](https://access.redhat.com/documentation/en-us/red_hat_satellite/6.14/html/administering_red_hat_satellite/managing_project_with_ansible_collections_admin) describes an alternative rpm based installation.
 
 ```
 satellite-maintain packages install ansible-collection-redhat-satellite
 ```
 
-(!) The role `content_views` is only available in collection redhat.satellite >= 2.1.0
-(!) The role `settings` is only available in collection redhat.satellite >= 3.1.0
-
 ## Collection Documentation
+
+Offline:
 
 ```
 ansible-doc redhat.satellite.content_view
 ```
+
+Or if you're on a recent ansible version, use `ansible-navigator`.
+
+[Online](https://redhatsatellite.github.io/satellite-ansible-collection/)
+
 
 ## Playbook Example
 

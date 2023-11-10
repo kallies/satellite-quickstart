@@ -1,0 +1,9 @@
+---
+satellite_http_proxies:
+  - name: "example.org"
+    url: "http://proxy.example.org:3128"
+    organizations:
+      - "{{ satellite_organization }}"
+    # for every location we've defined
+    locations: "{{ satellite_locations | map(attribute='name') | list }}"
+    state: present

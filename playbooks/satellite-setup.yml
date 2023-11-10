@@ -1,15 +1,16 @@
 ---
 - name: Satellite Setup
   hosts: satellite
+  become: true
   tasks:
-    - name: subscription manager
+    - name: Subscription Manager
       community.general.redhat_subscription:
         org_id: 1234
         # https://access.redhat.com/management/activation_keys
         activationkey: 'rh-abc'
         server_proxy_port: '1234'
         server_proxy_hostname: 'proxy'
-    - name: rhsm repositories
+    - name: RHSM repositories
       community.general.rhsm_repository:
         name:
           - rhel-7-server-rpms
@@ -19,7 +20,7 @@
           - rhel-7-server-ansible-2.9-rpms
         state: enabled
         purge: true
-    - name: manage firewall
+    - name: Manage firewall
       ansible.posix.firewalld:
         service: RH-Satellite-6
         state: enabled

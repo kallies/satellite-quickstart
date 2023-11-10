@@ -1,0 +1,27 @@
+---
+satellite_username: user
+# update with
+# ansible-vault encrypt_string
+#   --ask-vault-pass
+#   --name satellite_password
+satellite_password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      31626231333264613462666135666434383632383037616433653366623634653330636661666563
+      6363323131643038316563386466386564363439343736320a333731623161313364393064383435
+      33636666626631333232353665373166333836616532663436613761303034666630633133356230
+      6234303331366166660a626563636436336233636132623138646537333263386435303538363033
+      3832
+satellite_server_url: https://satellite
+satellite_validate_certs: false
+satellite_organization: Puzzle ITC
+satellite_settings:
+  - name: default_redhat_download_policy
+    value: immediate
+  - name: default_proxy_download_policy
+    value: immediate
+  - name: rss_enable
+    value: false
+  - name: administrator
+    value: satellite@example.com
+  - name: content_default_http_proxy
+    value: 'example.org'

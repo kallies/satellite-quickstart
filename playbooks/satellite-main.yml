@@ -1,21 +1,23 @@
 ---
 - name: Satellite Settings
   hosts: satellite
-  collections:
-    - redhat.satellite
   environment:
     SATELLITE_USERNAME: "{{ satellite_username }}"
     SATELLITE_PASSWORD: "{{ satellite_password }}"
-    SATELLITE_SERVER_URL: "{{ server_url }}"
-    SATELLITE_VALIDATE_CERTS: false
+    SATELLITE_SERVER_URL: "{{ satellite_server_url }}"
+    SATELLITE_VALIDATE_CERTS: "{{ satellite_validate_certs | bool }}"
   tasks:
     - name: Satellite Locations
-      include_tasks: tasks/locations.yml
+      ansible.builtin.include_role:
+        name: redhat.satellite.locations
+      when: satellite_locations is defined
     - name: Proxy Configuration
-      include_tasks: tasks/proxy.yml
+      ansible.builtin.include_role:
+        name: http_proxies
+      when: satellite_http_proxies is defined
     - name: Configure Satellite Settings
-      include_role:
+      ansible.builtin.include_role:
         name: redhat.satellite.settings
       when: satellite_settings is defined
     - name: Content
-      include_tasks: tasks/content.yml
+      ansible.legacy.include_tasks: tasks/content.yml
