@@ -1,0 +1,14 @@
+---
+satellite_sync_plans:
+  - name: sync Red Hat content
+    interval: weekly
+    sync_date: 2021-10-07 00:08:15 UTC
+    products:
+      - Red Hat Enterprise Linux Server
+      - Red Hat Enterprise Linux for x86_64
+      - Red Hat Software Collections (for RHEL Server)
+  - name: sync CentOS content
+    interval: weekly
+    sync_date: 2021-10-11 00:20:15 UTC
+    products:
+      - CentOS 8 Stream

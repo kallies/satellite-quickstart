@@ -1,0 +1,8 @@
+---
+satellite_locations:
+  - name: Tübingen
+    organisations:
+      - "{{ satellite_organization }}"
+  - name: DMZ
+    organisations:
+      - "{{ satellite_organization }}"

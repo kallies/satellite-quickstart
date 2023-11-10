@@ -1,22 +1,15 @@
 ---
 - name: Publish Content
   hosts: satellite
-  collections:
-    - redhat.satellite
   environment:
     SATELLITE_USERNAME: "{{ satellite_username }}"
     SATELLITE_PASSWORD: "{{ satellite_password }}"
-    SATELLITE_SERVER_URL: "{{ server_url }}"
-    SATELLITE_VALIDATE_CERTS: false
+    SATELLITE_SERVER_URL: "{{ satellite_server_url }}"
+    SATELLITE_VALIDATE_CERTS: "{{ satellite_validate_certs | bool }}"
   tasks:
     - name: "Publish cv-rhel7"
       redhat.satellite.content_view_version:
         content_view: cv-rhel7
-        organization: "{{ satellite_organization }}"
-        version: '1.0'
-    - name: "Publish cv-docker-el7"
-      redhat.satellite.content_view_version:
-        content_view: cv-docker-el7
         organization: "{{ satellite_organization }}"
         version: '1.0'
     - name: "Publish ccv-rhel7"

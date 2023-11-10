@@ -1,17 +1,17 @@
 ---
 - name: Content Credentials
-  include_role:
+  ansible.builtin.include_role:
     name: redhat.satellite.content_credentials
   when: satellite_content_credentials is defined
 - name: Red Hat Repositories
-  include_role:
+  ansible.builtin.include_role:
     name: redhat.satellite.repositories
   when: satellite_products is defined
 - name: Sync Plans
-  include_role:
+  ansible.builtin.include_role:
     name: redhat.satellite.sync_plans
   when: satellite_sync_plans is defined
 - name: Content Views
-  include_role:
+  ansible.builtin.include_role:
     name: redhat.satellite.content_views
   when: satellite_content_views is defined

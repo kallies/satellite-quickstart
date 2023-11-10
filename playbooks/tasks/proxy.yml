@@ -1,8 +1,0 @@
----
-- name: create example.org proxy
-  redhat.satellite.http_proxy:
-    name: "example.org"
-    url: "http://example.org:3128"
-    organizations:
-      - "{{ satellite_organization }}"
-    state: present
