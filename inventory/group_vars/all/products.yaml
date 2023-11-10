@@ -28,6 +28,15 @@ satellite_products:
         releasever: 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         releasever: 8.8
+      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
+        releasever: 9
+      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
+        releasever: 9.3
+      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
+        releasever: 9
+      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
+        releasever: 9.3
+
   - name: CentOS 8 Stream
     repositories:
       - name: repo-centos-stream-AppStream
