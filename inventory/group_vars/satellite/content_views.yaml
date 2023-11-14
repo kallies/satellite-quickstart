@@ -1,0 +1,38 @@
+---
+satellite_content_views:
+  - name: cv-rhel-7
+    repositories:
+      - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server
+        product: Red Hat Enterprise Linux Server
+      - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
+        product: Red Hat Enterprise Linux Server
+      - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7Server
+        product: Red Hat Enterprise Linux Server
+      - name: Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.9
+        product: Red Hat Enterprise Linux Server
+  - name: ccv-rhel-7
+    components:
+      - content_view: cv-rhel-7
+        latest: true
+    lifecycle_environments:
+      - dev
+      - uat
+      - prod
+  - name: cv-rhel-8
+    repositories:
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8
+        product: Red Hat Enterprise Linux for x86_64
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.8
+        product: Red Hat Enterprise Linux for x86_64
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8
+        product: Red Hat Enterprise Linux for x86_64
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.8
+        product: Red Hat Enterprise Linux for x86_64
+  - name: ccv-rhel-8
+    components:
+      - content_view: cv-rhel-8
+        latest: true
+    lifecycle_environments:
+      - dev
+      - uat
+      - prod

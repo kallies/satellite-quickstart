@@ -7,14 +7,14 @@
     SATELLITE_SERVER_URL: "{{ satellite_server_url }}"
     SATELLITE_VALIDATE_CERTS: "{{ satellite_validate_certs | bool }}"
   tasks:
-    - name: "Publish cv-rhel7"
+    - name: "Publish cv-rhel-7"
       redhat.satellite.content_view_version:
-        content_view: cv-rhel7
+        content_view: cv-rhel-7
         organization: "{{ satellite_organization }}"
         version: '1.0'
-    - name: "Publish ccv-rhel7"
+    - name: "Publish ccv-rhel-7"
       redhat.satellite.content_view_version:
-        content_view: ccv-rhel7
+        content_view: ccv-rhel-7
         organization: "{{ satellite_organization }}"
         version: '1.0'
         lifecycle_environments:

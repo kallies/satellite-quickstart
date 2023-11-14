@@ -15,3 +15,14 @@
   ansible.builtin.include_role:
     name: redhat.satellite.content_views
   when: satellite_content_views is defined
+- name: Lifecycle Environments
+  ansible.builtin.include_role:
+    name: redhat.satellite.lifecycle_environments
+  when: satellite_lifecycle_environments is defined
+- name: Publish and Promote initial (C)CV version
+  ansible.builtin.include_tasks: tasks/p+p_initial_cv_version.yml
+  loop: "{{ satellite_content_views }}"
+  when: satellite_content_views is defined
+- name: Activation Keys
+  ansible.builtin.include_tasks: tasks/activation_keys.yml
+  when: satellite_content_views is defined

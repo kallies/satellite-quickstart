@@ -1,0 +1,5 @@
+---
+- name: Activation Keys
+  ansible.builtin.include_role:
+    name: redhat.satellite.activation_keys
+  when: satellite_activation_keys is defined

@@ -1,0 +1,13 @@
+---
+- name: Satellite Locations
+  ansible.builtin.include_role:
+    name: redhat.satellite.locations
+  when: satellite_locations is defined
+- name: Proxy Configuration
+  ansible.builtin.include_role:
+    name: http_proxies
+  when: satellite_http_proxies is defined
+- name: Configure Satellite Settings
+  ansible.builtin.include_role:
+    name: redhat.satellite.settings
+  when: satellite_settings is defined
