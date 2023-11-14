@@ -36,3 +36,21 @@ satellite_content_views:
       - dev
       - uat
       - prod
+  - name: cv-rhel-9
+    repositories:
+      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9
+        product: Red Hat Enterprise Linux for x86_64
+      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.3
+        product: Red Hat Enterprise Linux for x86_64
+      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9
+        product: Red Hat Enterprise Linux for x86_64
+      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.3
+        product: Red Hat Enterprise Linux for x86_64
+  - name: ccv-rhel-9
+    components:
+      - content_view: cv-rhel-9
+        latest: true
+    lifecycle_environments:
+      - dev
+      - uat
+      - prod

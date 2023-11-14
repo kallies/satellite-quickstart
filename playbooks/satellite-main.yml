@@ -6,6 +6,7 @@
     SATELLITE_PASSWORD: "{{ satellite_password }}"
     SATELLITE_SERVER_URL: "{{ satellite_server_url }}"
     SATELLITE_VALIDATE_CERTS: "{{ satellite_validate_certs | bool }}"
+  gather_facts: false
   tasks:
     - name: General Configuration (locations, proxy, settings)
       ansible.builtin.include_tasks: tasks/config.yml

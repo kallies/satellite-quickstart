@@ -1,20 +1,29 @@
 ---
 satellite_activation_keys:
+  - name: "rhel-9-dev"
+    lifecycle_environment: dev
+    content_view: ccv-rhel-9
+  - name: "rhel-9-uat"
+    lifecycle_environment: uat
+    content_view: ccv-rhel-9
+  - name: "rhel-9-prod"
+    lifecycle_environment: prod
+    content_view: ccv-rhel-9
   - name: "rhel-8-dev"
     lifecycle_environment: dev
     content_view: ccv-rhel-8
   - name: "rhel-8-uat"
-    lifecycle_environment: dev
+    lifecycle_environment: uat
     content_view: ccv-rhel-8
   - name: "rhel-8-prod"
-    lifecycle_environment: dev
+    lifecycle_environment: prod
     content_view: ccv-rhel-8
   - name: "rhel-7-dev"
     lifecycle_environment: dev
     content_view: ccv-rhel-7
   - name: "rhel-7-uat"
-    lifecycle_environment: dev
+    lifecycle_environment: uat
     content_view: ccv-rhel-7
   - name: "rhel-7-prod"
-    lifecycle_environment: dev
+    lifecycle_environment: prod
     content_view: ccv-rhel-7
