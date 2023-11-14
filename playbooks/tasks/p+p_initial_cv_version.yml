@@ -1,0 +1,15 @@
+---
+# Create an initial version of a CV if none is present.
+# This is needed for defining Activation Keys.
+- name: Get CV information
+  redhat.satellite.content_view_version_info:
+    content_view: "{{ item.name }}"
+    organization: "{{ satellite_organization }}"
+  register: version_information
+- name: Publish Content View if no version is present
+  redhat.satellite.content_view_version:
+    content_view: "{{ item.name }}"
+    organization: "{{ satellite_organization }}"
+    lifecycle_environments: "{{ item.lifecycle_environments | default(omit) }}"
+  when:
+    - version_information.content_view_versions.0 is undefined

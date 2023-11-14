@@ -1,0 +1,8 @@
+---
+satellite_lifecycle_environments:
+  - name: dev
+    prior: Library
+  - name: uat
+    prior: dev
+  - name: prod
+    prior: uat

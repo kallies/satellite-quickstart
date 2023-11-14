@@ -7,17 +7,7 @@
     SATELLITE_SERVER_URL: "{{ satellite_server_url }}"
     SATELLITE_VALIDATE_CERTS: "{{ satellite_validate_certs | bool }}"
   tasks:
-    - name: Satellite Locations
-      ansible.builtin.include_role:
-        name: redhat.satellite.locations
-      when: satellite_locations is defined
-    - name: Proxy Configuration
-      ansible.builtin.include_role:
-        name: http_proxies
-      when: satellite_http_proxies is defined
-    - name: Configure Satellite Settings
-      ansible.builtin.include_role:
-        name: redhat.satellite.settings
-      when: satellite_settings is defined
+    - name: General Configuration (locations, proxy, settings)
+      ansible.builtin.include_tasks: tasks/config.yml
     - name: Content
-      ansible.legacy.include_tasks: tasks/content.yml
+      ansible.builtin.include_tasks: tasks/content.yml
