@@ -24,5 +24,6 @@
   loop: "{{ satellite_content_views }}"
   when: satellite_content_views is defined
 - name: Activation Keys
-  ansible.builtin.include_tasks: tasks/activation_keys.yml
-  when: satellite_content_views is defined
+  ansible.builtin.include_role:
+    name: redhat.satellite.activation_keys
+  when: satellite_activation_keys is defined
