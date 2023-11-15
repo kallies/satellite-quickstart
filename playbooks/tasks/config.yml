@@ -5,7 +5,7 @@
   when: satellite_locations is defined
 - name: Proxy Configuration
   ansible.builtin.include_role:
-    name: http_proxies
+    name: satellite.http_proxies
   when: satellite_http_proxies is defined
 - name: Configure Satellite Settings
   ansible.builtin.include_role:
