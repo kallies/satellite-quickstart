@@ -1,5 +1,5 @@
 ---
-- name: Publish Content
+- name: Publish new Content
   hosts: satellite
   environment:
     SATELLITE_USERNAME: "{{ satellite_username }}"
@@ -7,15 +7,21 @@
     SATELLITE_SERVER_URL: "{{ satellite_server_url }}"
     SATELLITE_VALIDATE_CERTS: "{{ satellite_validate_certs | bool }}"
   tasks:
-    - name: "Publish cv-rhel-7"
+    - name: "Get composite content-view (CCV) resource information of ccv-rhel-8"
+      redhat.satellite.resource_info:
+        resource: content_views
+        search: 'name="ccv-rhel-8"'
+      register: ccv_res_info
+    - name: "Publish components"
       redhat.satellite.content_view_version:
-        content_view: cv-rhel-7
+        # ccv_res_info.resources.0.content_view_components.1.content_view.name
+        content_view: "{{ item.content_view.name }}"
         organization: "{{ satellite_organization }}"
-        version: '1.0'
-    - name: "Publish ccv-rhel-7"
+        description: "Published {{ ansible_date_time.date }}"
+      loop: "{{ ccv_res_info.resources.0.content_view_components }}"
+    - name: "Publish ccv-rhel-8"
       redhat.satellite.content_view_version:
-        content_view: ccv-rhel-7
+        content_view: ccv-rhel-8
         organization: "{{ satellite_organization }}"
-        version: '1.0'
         lifecycle_environments:
-          - generic-dev
+          - dev
